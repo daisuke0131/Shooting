@@ -27,21 +27,21 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		float x = Input.GetAxisRaw ("Horizontal");
+		float x = Input.GetAxisRaw ("Horizontal");
 //		float y = Input.GetAxisRaw ("Vertical"); 
 
-		int touchCount = Input.touches.Count(t => t.phase != TouchPhase.Ended && t.phase != TouchPhase.Canceled);
-		if (touchCount == 1) {
-			Touch t = Input.touches.First ();
-			switch (t.phase) {
-			case TouchPhase.Moved:
-				float x = Input.GetTouch (0).deltaPosition.x;
-				float y = Input.GetTouch (0).deltaPosition.y;
+//		int touchCount = Input.touches.Count(t => t.phase != TouchPhase.Ended && t.phase != TouchPhase.Canceled);
+//		if (touchCount == 1) {
+//			Touch t = Input.touches.First ();
+//			switch (t.phase) {
+//			case TouchPhase.Moved:
+//				float x = Input.GetTouch (0).deltaPosition.x;
+//				float y = Input.GetTouch (0).deltaPosition.y;
 				Vector2 direction = new Vector2 (x, 0.0f).normalized;
 				Move (direction);
-				break;
-			}
-		}	
+//				break;
+//			}
+//		}	
 		
 	}
 
